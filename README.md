@@ -38,7 +38,7 @@ Jika proyek berasal dari Git:
 
 ```bash
 git clone <URL_REPOSITORY>
-cd "kelola perumahan"
+cd "management perumahan"
 ```
 
 Jika source code sudah tersedia, buka terminal di folder utama proyek.
@@ -204,13 +204,6 @@ Kemudian buka `http://127.0.0.1:5173`.
 
 ## 6. Menjalankan pemeriksaan
 
-Backend:
-
-```bash
-cd backend
-./vendor/bin/pint --test
-php artisan test
-```
 
 Frontend:
 
@@ -242,6 +235,7 @@ menghapus seluruh tabel dan data.
 - Periksa `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, dan
   `DB_PASSWORD`.
 - Jalankan `php artisan optimize:clear` setelah mengubah `.env`.
+- Pada file `.env` tetap jalankan `SESSION_DRIVER=file`
 
 ### React menampilkan Network Error
 
