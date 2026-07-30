@@ -42,8 +42,11 @@ cd "management perumahan"
 ```
 
 Jika source code sudah tersedia, buka terminal di folder utama proyek.
+## 2. Membuat Database MySQL
 
-## 2. Membuat database MySQL
+Buat sebuah database MySQL dengan nama `rt_management`. Database dapat dibuat melalui terminal maupun aplikasi pengelola database seperti **phpMyAdmin**, **MySQL Workbench**, atau **TablePlus**.
+
+### Menggunakan Terminal
 
 Masuk ke MySQL:
 
@@ -51,7 +54,7 @@ Masuk ke MySQL:
 mysql -u root -p
 ```
 
-Buat database:
+Kemudian jalankan perintah berikut:
 
 ```sql
 CREATE DATABASE rt_management
@@ -59,8 +62,16 @@ CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 ```
 
-Nama database boleh diubah, tetapi harus sama dengan nilai `DB_DATABASE`
-pada konfigurasi backend.
+### Menggunakan Aplikasi GUI
+
+Jika menggunakan aplikasi seperti **phpMyAdmin**, **MySQL Workbench**, **Laragon**, atau **TablePlus**:
+
+1. Buat database baru.
+2. Masukkan nama database: `rt_management`.
+3. Pilih collation `utf8mb4_unicode_ci` (atau biarkan menggunakan default `utf8mb4` jika sudah sesuai).
+4. Simpan atau buat database.
+
+> **Catatan:** Nama database dapat disesuaikan, tetapi harus sama dengan nilai `DB_DATABASE` pada file `.env` backend.
 
 ## 3. Instalasi backend Laravel
 
