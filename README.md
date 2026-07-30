@@ -1,7 +1,7 @@
 # Administrasi Perumahan RT
 
 Aplikasi administrasi perumahan dengan backend Laravel, frontend React, dan
-database MySQL. Proyek ini dijalankan tanpa Docker.
+database MySQL.
 
 ## Struktur proyek
 
@@ -37,7 +37,7 @@ npm -v
 Jika proyek berasal dari Git:
 
 ```bash
-git clone <URL_REPOSITORY>
+git clone https://github.com/dzuhdies/management-perumahan.git
 cd "management perumahan"
 ```
 
@@ -57,8 +57,6 @@ Buat database:
 CREATE DATABASE rt_management
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
-
-EXIT;
 ```
 
 Nama database boleh diubah, tetapi harus sama dengan nilai `DB_DATABASE`
