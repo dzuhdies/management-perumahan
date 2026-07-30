@@ -1,4 +1,4 @@
-# Administrasi Perumahan RT
+# Administrasi Perumahan
 
 Aplikasi administrasi perumahan dengan backend Laravel, frontend React, dan
 database MySQL.
@@ -6,7 +6,7 @@ database MySQL.
 ## Struktur proyek
 
 ```text
-kelola perumahan/
+management perumahan/
 ├── backend/   REST API Laravel
 └── frontend/  React + Vite
 ```
