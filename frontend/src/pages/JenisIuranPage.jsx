@@ -90,7 +90,6 @@ function JenisIuranPage() {
     <section>
       <header className="page-header">
         <div>
-          <p className="page-eyebrow">Pengaturan tagihan</p>
           <h2>Jenis Iuran</h2>
           <p>Atur nama dan nominal iuran yang ditagihkan kepada penghuni.</p>
         </div>

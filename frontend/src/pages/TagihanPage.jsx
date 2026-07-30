@@ -101,7 +101,8 @@ function TagihanPage() {
   return (
     <section>
       <header className="page-header">
-        <div><p className="page-eyebrow">Iuran bulanan</p><h2>Tagihan</h2><p>Buat tagihan dan catat pembayaran iuran.</p></div>
+        <div>
+        <h2>Data Tagihan Penghuni</h2></div>
         <button className="button button-primary" type="button" disabled={working} onClick={generate}>
           <CalendarRange size={17} /> {working ? "Memproses..." : "Generate Tagihan"}
         </button>

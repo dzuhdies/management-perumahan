@@ -85,7 +85,7 @@ function PengeluaranPage() {
   return (
     <section>
       <header className="page-header">
-        <div><p className="page-eyebrow">Keuangan RT</p><h2>Pengeluaran</h2><p>Catat dan kelola penggunaan kas RT.</p></div>
+        <div><h2>Data Pengeluaran</h2></div>
         <button className="button button-primary" type="button" onClick={openCreate}>+ Catat Pengeluaran</button>
       </header>
 

@@ -134,9 +134,7 @@ function PenghuniPage() {
     <section>
       <header className="page-header">
         <div>
-          <p className="page-eyebrow">Data warga</p>
-          <h2>Penghuni</h2>
-          <p>Kelola data penghuni dan penempatan rumah.</p>
+          <h2>Data Penghuni</h2>
         </div>
         <button className="button button-primary" type="button" onClick={openCreate}>
           + Tambah Penghuni

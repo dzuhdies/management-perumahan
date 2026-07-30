@@ -75,6 +75,7 @@ function LaporanPage() {
     : {
       "1_bulan": "1 bulan terakhir",
       "3_bulan": "3 bulan terakhir",
+      "1_tahun": "1 tahun terakhir",
       ytd: `Year to Date ${tahunSekarang}`,
     }[rentang];
 
@@ -82,9 +83,8 @@ function LaporanPage() {
     <section>
       <header className="page-header">
         <div>
-          <p className="page-eyebrow">Ringkasan data</p>
           <h2>Laporan</h2>
-          <p>Lihat pemasukan, pengeluaran, dan saldo berdasarkan rentang yang dipilih.</p>
+          <p>Lihat pemasukan, pengeluaran, dan saldo</p>
         </div>
       </header>
 
@@ -101,6 +101,7 @@ function LaporanPage() {
             {[
               ["1_bulan", "1 Bulan"],
               ["3_bulan", "3 Bulan"],
+              ["1_tahun", "1 Tahun"],
               ["ytd", "Year to Date"],
               ["custom", "Custom"],
             ].map(([value, label]) => (
@@ -164,12 +165,11 @@ function LaporanPage() {
             <div className="panel-heading chart-heading">
               <div>
                 <h3>Tren keuangan</h3>
-                <p>{labelRentang} · garis saldo dapat berada di bawah nol ketika terjadi defisit.</p>
+                <p>{labelRentang} · perbandingan pemasukan dan pengeluaran.</p>
               </div>
               <div className="chart-legend">
                 <span className="income-dot">Pemasukan</span>
                 <span className="expense-dot">Pengeluaran</span>
-                <span className="balance-dot">Saldo</span>
               </div>
             </div>
             <LineChart data={grafik} />
@@ -273,7 +273,6 @@ function LineChart({ data }) {
   const values = data.flatMap((item) => [
     Number(item.pemasukan),
     Number(item.pengeluaran),
-    Number(item.saldo),
   ]);
   const minValue = Math.min(0, ...values);
   const maxValue = Math.max(0, ...values);
@@ -294,7 +293,6 @@ function LineChart({ data }) {
   const series = [
     { key: "pemasukan", type: "income", label: "Pemasukan", points: points("pemasukan") },
     { key: "pengeluaran", type: "expense", label: "Pengeluaran", points: points("pengeluaran") },
-    { key: "saldo", type: "balance", label: "Saldo", points: points("saldo") },
   ];
   const labelStep = Math.max(1, Math.ceil(data.length / 8));
   const compactCurrency = (value) => new Intl.NumberFormat("id-ID", {
@@ -304,7 +302,7 @@ function LineChart({ data }) {
 
   return (
     <div className="line-chart-wrap">
-      <svg className="line-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Grafik garis pemasukan, pengeluaran, dan saldo">
+      <svg className="line-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Grafik garis pemasukan dan pengeluaran">
         {[0, 0.25, 0.5, 0.75, 1].map((ratio) => {
           const value = minValue + valueRange * ratio;
           const y = yPosition(value);

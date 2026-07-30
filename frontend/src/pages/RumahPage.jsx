@@ -301,7 +301,6 @@ function RumahPage() {
         <section>
             <header className="page-header">
                 <div>
-                    <p className="page-label">Peta Perumahan</p>
                     <h2>Denah Rumah</h2>
                     <p className="page-description">
                         Pilih rumah pada denah untuk melihat penghuni dan riwayat pembayarannya.

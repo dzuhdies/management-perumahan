@@ -130,9 +130,7 @@ function DashboardPage() {
     <section>
       <header className="page-header">
         <div>
-          <p className="page-label">Ringkasan Perumahan</p>
           <h2>Dashboard</h2>
-          <p className="page-description">Pantau penghuni, kas, tren saldo, dan tagihan yang belum lunas.</p>
         </div>
         <button className="button button-ghost" type="button" onClick={fetchDashboard} disabled={loading}>
           <RefreshCw size={16} /> {loading ? "Memuat..." : "Muat ulang"}
